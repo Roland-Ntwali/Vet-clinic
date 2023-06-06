@@ -1,5 +1,8 @@
-/* Database schema to keep the structure of entire database. */
-
 CREATE TABLE animals (
-    name varchar(100)
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name varchar(100),
+    date_of_birth DATE,
+    escape_attempts INT,
+    neutured BOOLEAN,
+    weight_kg DECIMAL
 );
