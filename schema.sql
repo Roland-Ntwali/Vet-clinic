@@ -6,3 +6,6 @@ CREATE TABLE animals (
     neutured BOOLEAN,
     weight_kg DECIMAL
 );
+
+-- Create a new column called species
+ALTER TABLE animals ADD COLUMN species varchar(100);
