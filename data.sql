@@ -32,7 +32,6 @@ SET species_id = (CASE
     ELSE (SELECT id FROM species WHERE name = 'Pokemon')
     END);
 
-    -- Write queries using JOIN
 
 BEGIN;
 
