@@ -32,4 +32,33 @@ SET species_id = (CASE
     ELSE (SELECT id FROM species WHERE name = 'Pokemon')
     END);
 
-    
+    -- Write queries using JOIN
+
+BEGIN;
+
+-- Update owner_id for Agumon
+UPDATE animals
+SET owner_id = (SELECT id FROM owners WHERE full_name = 'Sam Smith')
+WHERE name = 'Agumon';
+
+-- Update owner_id for Gabumon and Pikachu
+UPDATE animals
+SET owner_id = (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell')
+WHERE name IN ('Gabumon', 'Pikachu');
+
+-- Update owner_id for Devimon and Plantmon
+UPDATE animals
+SET owner_id = (SELECT id FROM owners WHERE full_name = 'Bob')
+WHERE name IN ('Devimon', 'Plantmon');
+
+-- Update owner_id for Charmander, Squirtle, and Blossom
+UPDATE animals
+SET owner_id = (SELECT id FROM owners WHERE full_name = 'Melody Pond')
+WHERE name IN ('Charmander', 'Squirtle', 'Blossom');
+
+-- Update owner_id for Angemon and Boarmon
+UPDATE animals
+SET owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
+WHERE name IN ('Angemon', 'Boarmon');
+
+COMMIT;
