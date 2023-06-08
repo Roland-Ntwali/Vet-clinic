@@ -19,4 +19,8 @@ INSERT INTO owners (full_name, age) VALUES
     ('Melody Pond', 77),          -- Melody Pond, 77 years old
     ('Dean Winchester', 14),      -- Dean Winchester, 14 years old
     ('Jodie Whittaker', 38);      -- Jodie Whittaker, 38 years old
-    
+
+    -- Insert data into the species table
+INSERT INTO species (name) VALUES
+    ('Pokemon'),                  -- Pokemon
+    ('Digimon');                  -- Digimon
