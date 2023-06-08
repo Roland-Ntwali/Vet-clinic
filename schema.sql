@@ -9,3 +9,10 @@ CREATE TABLE animals (
 
 -- Create a new column called species
 ALTER TABLE animals ADD COLUMN species varchar(100);
+
+--Create owners table
+CREATE TABLE owners (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(100),
+    age INTEGER
+);
