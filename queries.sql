@@ -140,3 +140,25 @@ LEFT JOIN animals a ON o.id = a.owner_id
 GROUP BY o.full_name
 ORDER BY animal_count DESC
 LIMIT 1;
+
+
+--Who was the last animal seen by William Tatcher?
+SELECT a.name
+FROM animals a
+INNER JOIN visits v ON a.id = v.animal_id
+INNER JOIN vets vt ON v.vet_id = vt.id
+WHERE vt.name = 'Vet William Tatcher'
+ORDER BY v.visit_date DESC
+LIMIT 1;
+
+--How many different animals did Stephanie Mendez see?
+SELECT COUNT(DISTINCT v.animal_id) AS animal_count
+FROM visits v
+INNER JOIN vets vt ON v.vet_id = vt.id
+WHERE vt.name = 'Vet Stephanie Mendez';
+
+--List all vets and their specialties, including vets with no specialties.
+SELECT v.name, COALESCE(s.name, 'No specialty') AS specialty
+FROM vets v
+LEFT JOIN specializations sp ON v.id = sp.vet_id
+LEFT JOIN species s ON sp.species_id = s.id;
