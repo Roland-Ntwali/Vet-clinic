@@ -61,3 +61,22 @@ SET owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
 WHERE name IN ('Angemon', 'Boarmon');
 
 COMMIT;
+
+
+-- Insert data into the vets table
+INSERT INTO vets (name, age, date_of_graduation)
+VALUES
+    ('Vet William Tatcher', 45, '2000-04-23'),
+    ('Vet Maisy Smith', 26, '2019-01-17'),
+    ('Vet Stephanie Mendez', 64, '1981-05-04'),
+    ('Vet Jack Harkness', 38, '2008-06-08');
+
+    -- Insert data into the specializations table
+INSERT INTO specializations (vet_id, species_id)
+VALUES
+    ((SELECT id FROM vets WHERE name = 'Vet William Tatcher'), (SELECT id FROM species WHERE name = 'Pokemon')),
+    ((SELECT id FROM vets WHERE name = 'Vet Stephanie Mendez'), (SELECT id FROM species WHERE name = 'Digimon')),
+    ((SELECT id FROM vets WHERE name = 'Vet Stephanie Mendez'), (SELECT id FROM species WHERE name = 'Pokemon')),
+    ((SELECT id FROM vets WHERE name = 'Vet Jack Harkness'), (SELECT id FROM species WHERE name = 'Digimon'));
+
+    
