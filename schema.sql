@@ -58,6 +58,14 @@ CREATE TABLE species (
     PRIMARY KEY (id)
 );
 
+---- Create the vets table
+CREATE TABLE vets (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    age INTEGER,
+    date_of_graduation DATE
+);
+
 -- Create the specializations table
 CREATE TABLE specializations (
     vet_id INT REFERENCES vets(id),
