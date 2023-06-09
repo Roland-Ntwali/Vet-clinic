@@ -65,6 +65,7 @@ CREATE TABLE specializations (
     PRIMARY KEY (vet_id, species_id)
 );
 
+
 -- Create the visits table
 CREATE TABLE visits (
     animal_id INT REFERENCES animals(id),
