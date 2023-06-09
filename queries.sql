@@ -178,3 +178,20 @@ INNER JOIN visits v ON a.id = v.animal_id
 GROUP BY a.name
 ORDER BY visit_count DESC
 LIMIT 1;
+
+--Who was Maisy Smith's first visit?
+SELECT a.name
+FROM animals a
+INNER JOIN visits v ON a.id = v.animal_id
+INNER JOIN vets vt ON v.vet_id = vt.id
+WHERE vt.name = 'Vet Maisy Smith'
+ORDER BY v.visit_date ASC
+LIMIT 1;
+
+--Details for most recent visit: animal information, vet information, and date of visit.
+SELECT a.name AS animal_name, ve.name AS vet_name, v.visit_date
+FROM visits AS v
+INNER JOIN animals AS a ON v.animal_id = a.id
+INNER JOIN vets AS ve ON v.vet_id = ve.id
+INNER JOIN species AS s ON a.species_id = s.id
+WHERE s.name IN ('Pokemon', 'Digimon');
