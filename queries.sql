@@ -203,3 +203,9 @@ INNER JOIN animals a ON v.animal_id = a.id
 INNER JOIN vets vt ON v.vet_id = vt.id
 LEFT JOIN specializations sp ON vt.id = sp.vet_id AND a.species_id = sp.species_id
 WHERE sp.vet_id IS NULL;
+
+--What specialty should Maisy Smith consider getting? Look for the species she gets the most.
+SELECT v.name AS vet_name, COALESCE(s.name, 'No specialty') AS specialty
+FROM vets AS v
+LEFT JOIN specializations AS sp ON v.id = sp.vet_id
+LEFT JOIN species AS s ON sp.species_id = s.id;
