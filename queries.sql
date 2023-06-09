@@ -195,3 +195,11 @@ INNER JOIN animals AS a ON v.animal_id = a.id
 INNER JOIN vets AS ve ON v.vet_id = ve.id
 INNER JOIN species AS s ON a.species_id = s.id
 WHERE s.name IN ('Pokemon', 'Digimon');
+
+--How many visits were with a vet that did not specialize in that animal's species?
+SELECT COUNT(*) AS visit_count
+FROM visits v
+INNER JOIN animals a ON v.animal_id = a.id
+INNER JOIN vets vt ON v.vet_id = vt.id
+LEFT JOIN specializations sp ON vt.id = sp.vet_id AND a.species_id = sp.species_id
+WHERE sp.vet_id IS NULL;
