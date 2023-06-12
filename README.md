@@ -87,6 +87,11 @@ Clone this repository to your desired folder:
 - GitHub: [@Roland-Ntwali](https://github.com/Roland-Ntwali)
 - LinkedIn: [Roland-Ntwali](https://www.linkedin.com/in/roland-ntwali/)
 
+👤 **Naledi**
+
+- GitHub: [@Naledi-Dikgale](https://github.com/Naledi-Dikgale)
+- LinkedIn: [Naledi-Dikgale](https://www.linkedin.com/in/naledi-dikgale-068423159/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
